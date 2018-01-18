@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import org.junit.*;
 //import static org.junit.Assert.*;
 import org.openqa.selenium.By;
@@ -10,6 +11,8 @@ import junit.framework.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 /**
  *
  * @author 1415506
@@ -33,12 +36,16 @@ public class TestDemo {
     
     @Before
     public void setUp() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
+       // System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
        //System.setProperty("webdriver.chrome.driver", new File("/usr/local/share/chromedriver").getCanonicalPath()); 
        //System.setProperty("webdriver.gecko.driver", new File("/usr//share/geckodriver").getCanonicalPath()); 
        //driver = new FirefoxDriver();
-       driver = new ChromeDriver();
-        driver.get("http://18.217.78.140:8080/DemoWs/");
+       //driver = new ChromeDriver();       
+       
+       URL serverurl = new URL("http://18.216.150.20:9515");
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            WebDriver driver = new RemoteWebDriver(serverurl,capabilities);
+       driver.get("http://18.217.78.140:8080/DemoWs/");
     }
     
     //@Ignore
