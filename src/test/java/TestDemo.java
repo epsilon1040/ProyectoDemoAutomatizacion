@@ -34,10 +34,10 @@ public class TestDemo {
     @Before
     public void setUp() throws IOException {
         //System.setProperty("webdriver.chrome.driver", "C://Users//1415506//Documents//Automatizadas//Clases//selenium-webdriver//chromedriver.exe");
-       //System.setProperty("webdriver.chrome.driver", new File("./src/test/java/Resources/chromedriver.exe").getCanonicalPath()); 
-       System.setProperty("webdriver.gecko.driver", new File("/usr/share/geckodriver").getCanonicalPath()); 
-       driver = new FirefoxDriver();
-       //driver = new ChromeDriver();
+       System.setProperty("webdriver.chrome.driver", new File("/usr/local/share/chromedriver").getCanonicalPath()); 
+       //System.setProperty("webdriver.gecko.driver", new File("/usr//share/geckodriver").getCanonicalPath()); 
+       //driver = new FirefoxDriver();
+       driver = new ChromeDriver();
         driver.get("http://18.217.78.140:8080/DemoWs/");
     }
     
