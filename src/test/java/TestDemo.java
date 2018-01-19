@@ -43,7 +43,7 @@ public class TestDemo {
        //driver = new FirefoxDriver();
        //driver = new ChromeDriver();       
        
-       URL serverurl = new URL("http://18.216.150.20:9515");
+       URL serverurl = new URL("http://172.31.22.208:9515");
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
             capabilities.setPlatform(Platform.LINUX);
             //capabilities.setPlatform(Platform.WINDOWS);
