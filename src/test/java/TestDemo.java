@@ -22,7 +22,7 @@ public class TestDemo {
     public TestDemo() {
     }
     
-     WebDriver driver;
+    WebDriver driver;
     
     
     @BeforeClass
@@ -44,7 +44,7 @@ public class TestDemo {
        
        URL serverurl = new URL("http://18.216.150.20:9515");
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-            WebDriver driver = new RemoteWebDriver(serverurl,capabilities);
+             driver = new RemoteWebDriver(serverurl,capabilities);
        driver.get("http://18.217.78.140:8080/DemoWs/");
     }
     
