@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 //import static Pruebas.Driver.*;
 import junit.framework.Assert;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -36,7 +37,7 @@ public class TestDemo {
     
     @Before
     public void setUp() throws IOException {
-       // System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
        //System.setProperty("webdriver.chrome.driver", new File("/usr/local/share/chromedriver").getCanonicalPath()); 
        //System.setProperty("webdriver.gecko.driver", new File("/usr//share/geckodriver").getCanonicalPath()); 
        //driver = new FirefoxDriver();
@@ -44,7 +45,9 @@ public class TestDemo {
        
        URL serverurl = new URL("http://18.216.150.20:9515");
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-             driver = new RemoteWebDriver(serverurl,capabilities);
+            capabilities.setPlatform(Platform.LINUX);
+            //capabilities.setPlatform(Platform.WINDOWS);
+              driver = new RemoteWebDriver(serverurl,capabilities);
        driver.get("http://18.217.78.140:8080/DemoWs/");
     }
     
