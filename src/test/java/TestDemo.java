@@ -37,17 +37,17 @@ public class TestDemo {
     
     @Before
     public void setUp() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/ubuntu/chromedriver");
        //System.setProperty("webdriver.chrome.driver", new File("/usr/local/share/chromedriver").getCanonicalPath()); 
        //System.setProperty("webdriver.gecko.driver", new File("/usr//share/geckodriver").getCanonicalPath()); 
        //driver = new FirefoxDriver();
-       //driver = new ChromeDriver();       
+       driver = new ChromeDriver();       
        
-       URL serverurl = new URL("http://172.31.22.208:9515");
-            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-            capabilities.setPlatform(Platform.LINUX);
+       //URL serverurl = new URL("http://172.31.22.208:9515");
+            //DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            //capabilities.setPlatform(Platform.LINUX);
             //capabilities.setPlatform(Platform.WINDOWS);
-              driver = new RemoteWebDriver(serverurl,capabilities);
+              //driver = new RemoteWebDriver(serverurl,capabilities);
        driver.get("http://18.217.78.140:8080/DemoWs/");
     }
     
