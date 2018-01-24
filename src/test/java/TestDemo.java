@@ -38,7 +38,7 @@ public class TestDemo {
     @Before
     public void setUp() throws IOException {
        // System.setProperty("webdriver.chrome.driver", "/usr/lib/chromium-browser/chromedriver");
-       System.setProperty("webdriver.chrome.driver", "/usr/share/geckodriver");
+       System.setProperty("webdriver.gecko.driver", "/usr/share/geckodriver");
        //System.setProperty("webdriver.chrome.driver", new File("/usr/local/share/chromedriver").getCanonicalPath()); 
        //System.setProperty("webdriver.gecko.driver", new File("/usr//share/geckodriver").getCanonicalPath()); 
        driver = new FirefoxDriver();
