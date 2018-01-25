@@ -37,19 +37,11 @@ public class TestDemo {
     
     @Before
     public void setUp() throws IOException {
-       // System.setProperty("webdriver.chrome.driver", "/usr/lib/chromium-browser/chromedriver");
-       System.setProperty("webdriver.gecko.driver", "/usr/share/geckodriver");
-       //System.setProperty("webdriver.chrome.driver", new File("/usr/local/share/chromedriver").getCanonicalPath()); 
-       //System.setProperty("webdriver.gecko.driver", new File("/usr//share/geckodriver").getCanonicalPath()); 
-       driver = new FirefoxDriver();
-      // driver = new ChromeDriver();       
-       
-       //URL serverurl = new URL("http://172.31.22.208:9515");
-            //DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-            //capabilities.setPlatform(Platform.LINUX);
-            //capabilities.setPlatform(Platform.WINDOWS);
-              //driver = new RemoteWebDriver(serverurl,capabilities);
-       driver.get("http://18.217.78.140:8080/DemoWs/");
+      URL serverurl = new URL("http://127.0.0.1:4444/wd/hub");
+            DesiredCapabilities capabilities =new DesiredCapabilities();
+            capabilities.setCapability("browserName", "chrome");
+            driver = new RemoteWebDriver(serverurl,capabilities);
+       driver.get("http://18.217.78.140:8080/WsDemo/");
     }
     
     //@Ignore
@@ -68,7 +60,8 @@ public class TestDemo {
         ConversionDestino.selectByIndex(2);
         Thread.sleep(2000);
       
-        WebElement btnConvertir = driver.findElement(By.xpath("//*[@id=\'frmBuscar\']/button"));
+        //WebElement btnConvertir = driver.findElement(By.xpath("//*[@id=\'frmBuscar\']/button"));
+        WebElement btnConvertir = driver.findElement(By.xpath("//*[@id=\'frmBuscar\']/div[4]/div/button"));
         btnConvertir.click();
         Thread.sleep(2000);
         
@@ -94,7 +87,8 @@ public class TestDemo {
         ConversionDestino.selectByIndex(0);
         Thread.sleep(2000);
       
-        WebElement btnConvertir = driver.findElement(By.xpath("//*[@id=\'frmBuscar\']/button"));
+        //WebElement btnConvertir = driver.findElement(By.xpath("//*[@id=\'frmBuscar\']/button"));
+        WebElement btnConvertir = driver.findElement(By.xpath("//*[@id=\'frmBuscar\']/div[4]/div/button"));
         btnConvertir.click();
         Thread.sleep(3000);
         
@@ -108,6 +102,7 @@ public class TestDemo {
        @After
     public void tearDown() throws InterruptedException{
         driver.close();        
+        
     }
   
 }
