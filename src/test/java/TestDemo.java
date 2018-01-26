@@ -95,7 +95,7 @@ public class TestDemo {
         
         WebElement resultado = driver.findElement(By.id("resultado"));
         
-        System.out.println("salida vacia es" +  resultado.getText());
+        System.out.println("salida sin datos" +  resultado.getText());
         Assert.assertEquals("", resultado.getText());
         
     }
