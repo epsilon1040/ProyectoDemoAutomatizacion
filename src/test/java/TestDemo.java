@@ -37,8 +37,8 @@ public class TestDemo {
     
     @Before
     public void setUp() throws IOException {
-      //URL serverurl = new URL("https://boya678:6db6a871-5bfd-456f-b8b1-c0195cb26b2d@ondemand.saucelabs.com:443/wd/hub");
-       URL serverurl = new URL("http://10.101.129.24:4444/wd/hub");  
+      URL serverurl = new URL("https://epsilon1040:f8c86f59-a071-4ef9-8e66-e101f2bfe597@ondemand.saucelabs.com:443/wd/hub");
+       //URL serverurl = new URL("http://10.101.129.24:4444/wd/hub");  
             DesiredCapabilities capabilities =new DesiredCapabilities();
             capabilities.setCapability("browserName", "chrome");
             driver = new RemoteWebDriver(serverurl,capabilities);
@@ -102,7 +102,8 @@ public class TestDemo {
     
        @After
     public void tearDown() throws InterruptedException{
-        driver.close();        
+        //driver.close();        
+        driver.quit();
         
     }
   
