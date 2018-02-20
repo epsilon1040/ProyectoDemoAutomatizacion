@@ -37,7 +37,8 @@ public class TestDemo {
     
     @Before
     public void setUp() throws IOException {
-      URL serverurl = new URL("https://epsilon1040:f8c86f59-a071-4ef9-8e66-e101f2bfe597@ondemand.saucelabs.com:443/wd/hub");
+      //URL serverurl = new URL("https://epsilon1040:f8c86f59-a071-4ef9-8e66-e101f2bfe597@ondemand.saucelabs.com:443/wd/hub");
+      URL serverurl = new URL("https://juanprieto:b366d017-1053-40bf-a4bd-3b8c8f4eb0fe@ondemand.saucelabs.com:443/wd/hub");
        //URL serverurl = new URL("http://10.101.129.24:4444/wd/hub");  
             DesiredCapabilities capabilities =new DesiredCapabilities();
             capabilities.setCapability("browserName", "chrome");
